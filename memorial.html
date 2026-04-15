@@ -9,6 +9,17 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
+  <!-- NUBES DECORATIVAS (FONDO) -->
+  <div class="clouds-bg">
+    <div class="cloud c1">☁️</div>
+    <div class="cloud c2">☁️</div>
+    <div class="cloud c3">☁️</div>
+    <div class="cloud c4">☁️</div>
+    <div class="cloud c5">☁️</div>
+    <div class="cloud c6">☁️</div>
+    <div class="cloud c7">☁️</div>
+    <div class="cloud c8">☁️</div>
+  </div>
 
   <main class="container p-0" style="margin-top: 20px; padding-bottom: 80px;">
     <div class="row g-0">
@@ -280,10 +291,12 @@
                 <div id="videos-content" class="recuerdos-content">
                   <div class="videos-grid">
                     <div class="video-card">
-                      <video src="cumpelaños#64.mp4" type="video/mp4" controls>
+                      <video controls style="width: 100%; border-radius: 10px;">
+                        <source src="cumpela%C3%B1os%2364.mp4" type="video/mp4">
                         Tu navegador no soporta video.
                       </video>
                       <div class="video-caption">Octavio en su cumpleaños compartiendo con su familia</div>
+                    </div>
                   </div>
                 </div>
               </section>
@@ -348,6 +361,34 @@
       </div>
     </div>
   </main>
+
+  <!-- MODAL PARA AGREGAR MENSAJE -->
+  <div id="modal-mensaje" class="modal">
+    <div class="modal-content">
+      <span class="cerrar-modal" id="cerrar-modal-btn">&times;</span>
+      <h2 class="modal-titulo">Deja tu mensaje</h2>
+      <p class="modal-subtitulo">Honra la memoria con tus palabras</p>
+      
+      <div class="form-group">
+        <label for="input-titulo">Título o Asunto</label>
+        <input type="text" id="input-titulo" placeholder="Ej: Siempre te recordaremos">
+      </div>
+      
+      <div class="form-group">
+        <label for="input-texto">Tu mensaje</label>
+        <textarea id="input-texto" rows="4" placeholder="Escribe aquí tus palabras con amor..."></textarea>
+      </div>
+      
+      <div class="form-group">
+        <label for="input-autor">Tu nombre / Relación</label>
+        <input type="text" id="input-autor" placeholder="Ej: Su nieto / Maria G.">
+      </div>
+      
+      <button class="btn-guardar" id="btn-confirmar-mensaje">
+        <i class="fas fa-heart"></i> Guardar Mensaje
+      </button>
+    </div>
+  </div>
 
   <!-- BOTONES FIJOS EN LA PARTE INFERIOR -->
   <footer class="footer-fixed">

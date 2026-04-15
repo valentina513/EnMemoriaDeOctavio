@@ -53,6 +53,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     cargarMensajes();
     iniciarLightbox();
+    initModal();
 });
 
 // ==================== MENSAJES ====================
@@ -100,17 +101,56 @@ function guardarMensajes(mensajes) {
     localStorage.setItem('mensajes_octavio', JSON.stringify(mensajes));
 }
 
+// ==================== MODAL DE MENSAJES ====================
+function initModal() {
+    const modal = document.getElementById('modal-mensaje');
+    const btnAbrir = document.querySelector('.btn-agregar');
+    const btnCerrar = document.getElementById('cerrar-modal-btn');
+    const btnGuardar = document.getElementById('btn-confirmar-mensaje');
+
+    if (!modal || !btnAbrir || !btnCerrar || !btnGuardar) return;
+
+    btnAbrir.onclick = function() {
+        modal.style.display = "flex";
+    }
+
+    btnCerrar.onclick = function() {
+        modal.style.display = "none";
+    }
+
+    window.onclick = function(event) {
+        if (event.target === modal) {
+            modal.style.display = "none";
+        }
+    }
+
+    btnGuardar.onclick = function() {
+        const titulo = document.getElementById('input-titulo').value;
+        const texto = document.getElementById('input-texto').value;
+        const autor = document.getElementById('input-autor').value;
+
+        if (!titulo || !texto || !autor) {
+            alert("Por favor, completa todos los campos");
+            return;
+        }
+
+        const mensajes = JSON.parse(localStorage.getItem('mensajes_octavio') || '[]');
+        mensajes.push({ titulo, texto, autor });
+        guardarMensajes(mensajes);
+        cargarMensajes();
+
+        // Limpiar y cerrar
+        document.getElementById('input-titulo').value = '';
+        document.getElementById('input-texto').value = '';
+        document.getElementById('input-autor').value = '';
+        modal.style.display = "none";
+    }
+}
+
 function agregarMensaje() {
-    const titulo = prompt("Título del mensaje:");
-    const texto = prompt("Escribe el mensaje:");
-    const autor = prompt("Tu nombre o relación:");
-
-    if (!titulo || !texto || !autor) return;
-
-    const mensajes = JSON.parse(localStorage.getItem('mensajes_octavio') || '[]');
-    mensajes.push({ titulo, texto, autor });
-    guardarMensajes(mensajes);
-    cargarMensajes();
+    // Esta función queda vacía o redirige al modal si se llama desde otro lugar
+    const modal = document.getElementById('modal-mensaje');
+    if (modal) modal.style.display = "flex";
 }
 
 function eliminarMensaje(idx) {
