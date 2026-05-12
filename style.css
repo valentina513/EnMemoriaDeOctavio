@@ -68,22 +68,22 @@
 
     /* ===== TARJETA PRINCIPAL ===== */
     .card {
-        border-radius: 16px !important;
+        border-radius: 16px ;
         overflow: hidden;
-        background: transparent !important;
-        box-shadow: none !important;
+        background: transparent ;
+        box-shadow: none ;
     }
 
     .card-img-top {
-        background-size: cover !important;
-        background-repeat: no-repeat !important;
-        background-position: center !important;
+        background-size: cover ;
+        background-repeat: no-repeat ;
+        background-position: center ;
         height: 300px;
     }
 
     /* FOTO CIRCULAR GRANDE */
     .avatar .img-bg {
-        border-radius: 50% !important;
+        border-radius: 50% ;
         width: 180px;
         height: 180px;
         margin-top: -90px;
@@ -95,40 +95,40 @@
 
     /* CABECERA CON DEGRADADO AZUL */
     .card-header {
-        background: linear-gradient(135deg, #a8d0e6 0%, #c5e0f0 50%, #d4e8f5 100%) !important;
-        border-bottom: none !important;
-        padding-top: 20px !important;
-        padding-bottom: 25px !important;
+        background: linear-gradient(135deg, #a8d0e6 0%, #c5e0f0 50%, #d4e8f5 100%) ;
+        border-bottom: none ;
+        padding-top: 20px ;
+        padding-bottom: 25px ;
     }
 
     /* Colores de texto para que contrasten sobre el azul */
     .card-header .text-muted {
-        color: #2c5a6e !important;
+        color: #2c5a6e ;
         font-weight: 600;
         letter-spacing: 2px;
     }
 
     .card-header h1 {
-        color: white !important;
+        color: white ;
         text-shadow: 0 2px 4px rgba(0,0,0,0.1);
     }
 
     /* FRASE EN NEGRO para que resalte */
     .card-header h2 {
-        color: #1a1a1a !important;
+        color: #1a1a1a ;
         font-weight: 600;
     }
 
     /* FECHAS EN NEGRO para que resalte */
     .card-header h3 {
-        color: #1a1a1a !important;
+        color: #1a1a1a ;
         font-weight: 500;
     }
 
     /* ===== CONTENEDOR DE PÁGINAS ===== */
     .card-body {
-        background: rgba(255, 255, 255, 0.96) !important;
-        border-radius: 20px !important;
+        background: rgba(255, 255, 255, 0.96) ;
+        border-radius: 20px ;
         margin-top: 20px;
     }
 
